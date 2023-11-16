@@ -30,14 +30,6 @@ export const Hero = () => {
 
   const tabImages = [bookmark, search, share];
   
-  const toggleClick = (index) => {
-    setClickedOption(index - 1)
-  }
-
-  const questionClick = (i) => {
-    setQuestionIndex(i)
-  }
-  
   const imageText = clickedOption !== null && Data.map(data => {
     const selectedOption = data.text[clickedOption - 1];
     return(
@@ -86,7 +78,7 @@ export const Hero = () => {
       return(
         <>
         <div className={`items-end relative left-[24rem] top-[3.2rem] flex sm:left-[29rem]
-        ${info.id == questionIndex ? '' : ''} md:left-[37rem] md:top-[3.2rem] 2xl:top-[3.2rem]
+        ${info.id === questionIndex ? '' : ''} md:left-[37rem] md:top-[3.2rem] 2xl:top-[3.2rem]
         lg:top-[3.3rem] sm:top-[3.2rem]`} id="arrow">
             <button 
             key={info.id}
@@ -109,7 +101,7 @@ export const Hero = () => {
 
             <div className="pt-[2rem]" id="answer">
               <p className='leading-loose xl:text-[1.1rem]'>
-                {info.id == questionIndex ? selectedText.text : null}
+                {info.id === questionIndex ? selectedText.text : null}
               </p>
             </div>
           </div>
